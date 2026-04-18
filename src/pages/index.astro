@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Humidity Control & Clean Air Quality">
+    <header class="hero" slot="hero">
+        <div class="container">
+            <h1>Welcome to the World of Envirashield!</h1>
+            <p>Come discover the benefits of humidity and air quality control for yourself.</p>
+            <a href="/Product usage" class="btn btn-primary">Our Solutions</a>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="card" style="text-align: center;">
+            <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem; color: var(--primary-red);">Leading the Way in Air Quality</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 500;">
+                Envirashield is the worldwide leader in both <br>
+                <span style="color: var(--primary-dark-red);">Humidity Control and Clean Air Quality</span>
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+                Specially designed for the Food Service and Hospitality Industries.
+            </p>
+            
+            <div style="height: 2px; background: var(--bg-light); margin: 2rem auto; width: 50%;"></div>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                We invite you to take the time and navigate our website. 
+                You will truly be amazed at the number of ways our service will save you thousands in energy costs and food preservation.
+            </p>
+        </div>
+    </section>
+    
+    <section class="section" style="padding-top: 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            <div class="card" style="border-left: 4px solid var(--primary-red);">
+                <h4>Energy Savings</h4>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Reduce your operational costs naturally through superior humidity management.</p>
+                <a href="/EnergySavings" style="display: block; margin-top: 1rem; color: var(--primary-red); font-weight: 600; text-decoration: none;">Learn More &rarr;</a>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--bg-dark);">
+                <h4>Food Preservation</h4>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Extend the shelf life of your products with cleaner, stabilized air environments.</p>
+                <a href="/ProShield" style="display: block; margin-top: 1rem; color: var(--primary-red); font-weight: 600; text-decoration: none;">View Tech &rarr;</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

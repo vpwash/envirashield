@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap');
+
+:root {
+    /* Color Palette - Refined Red & Charcoal */
+    --primary-red: #ef233c;
+    --primary-dark-red: #d90429;
+    --bg-dark: #2b2d42;
+    --bg-light: #edf2f4;
+    --text-main: #2b2d42;
+    --text-muted: #8d99ae;
+    --white: #ffffff;
+    
+    /* Spacing & Borders */
+    --rs-spacing: 1.5rem;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
+/* --- Layout --- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--rs-spacing);
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+/* --- Navigation --- */
+
+.main-nav {
+    background-color: var(--white);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-red);
+    background-color: rgba(239, 35, 60, 0.05);
+}
+
+.nav-link.active {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+/* Sidebar for Desktop */
+.sidebar-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sidebar {
+    background: var(--bg-dark);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    color: var(--white);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-red);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    padding-left: 1.25rem;
+}
+
+/* --- Components --- */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark-red);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+/* --- Hero Section --- */
+
+.hero {
+    background: linear-gradient(rgba(43, 45, 66, 0.4), rgba(43, 45, 66, 0.4)), url('index_files/Envirashield_hero.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 10rem 0 8rem; /* Increased padding to show more of the image */
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Added shadow for readability */
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 992px) {
+    .sidebar-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        display: none; /* We'll use a slide-out or toggle for mobile */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Basic mobile nav placeholder */
+    }
+}

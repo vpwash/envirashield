@@ -1,0 +1,38 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Sidebar from '../components/Sidebar.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Envirashield is the worldwide leader in both Humidity Control and Clean Air Quality for the Food Service and Hospitality Industries." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Envirashield, LLC</title>
+		<meta name="description" content={description} />
+	</head>
+	<body>
+		<Navigation />
+		<slot name="hero" />
+		<main class="container">
+			<div class="sidebar-layout">
+				<Sidebar />
+				<article class="content-area">
+					<slot />
+				</article>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
